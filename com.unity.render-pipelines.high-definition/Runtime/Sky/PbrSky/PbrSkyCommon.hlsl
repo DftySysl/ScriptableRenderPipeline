@@ -46,7 +46,7 @@ float IntersectAtmosphereFromInside(float height, float cosChi)
     // Solve: t^2 + (2 * b) * t + c = 0.
     //
     // We are only interested in the largest root (the other one is negative).
-    // t = -2 * b + sqrt((2 * b)^2 - 4 * c) / 2
+    // t = (-2 * b + sqrt((2 * b)^2 - 4 * c)) / 2
     // t = -b + sqrt(b^2 - c)
     // t = -b + sqrt(d)
     //
@@ -108,8 +108,8 @@ float2 UnmapAerialPerspective(float2 uv)
     // (t + (r * cosChi))   = sqrt((r * cosChi)^2 - c)
     // (t + (r * cosChi))^2 = (r * cosChi)^2 - c
     //
-    // t^2 + 2 * t * (r * cosChi) + (r * cosChi)^2 - (r * cosChi)^2 + c = 0
-    // t^2 + 2 * t * (r * cosChi) + c = 0
+    // t^2 + 2 * t * (r * cosChi) + (r * cosChi)^2 - (r * cosChi)^2 = -c
+    // t^2 + 2 * t * (r * cosChi) = -c
     // 2 * t * (r * cosChi) = -(c + t^2)
     // r * cosChi = -0.5 * (c / t + t)
     // cosChi = -0.5 * (c / t + t) / r

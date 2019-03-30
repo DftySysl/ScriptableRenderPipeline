@@ -107,7 +107,7 @@ namespace UnityEngine.Experimental.Rendering.HDPipeline
             cmd.SetGlobalFloat( "_RcpAtmosphericDepth",                1.0f / H);
 
             cmd.SetGlobalFloat( "_AtmosphericRadiusSquared",           (R + H) * (R + H));
-            cmd.SetGlobalFloat( "_GrazingAngleAtmosphereExitDistance", (2 * R + H) * H);
+            cmd.SetGlobalFloat( "_GrazingAngleAtmosphereExitDistance", Mathf.Sqrt(H * (H + 2 * R)));
 
             cmd.SetGlobalFloat( "_AirDensityFalloff",                  m_Settings.airDensityFalloff);
             cmd.SetGlobalFloat( "_AirScaleHeight",                     1.0f / m_Settings.airDensityFalloff);
